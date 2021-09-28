@@ -24,15 +24,15 @@
         </li>
       </ul>
       <div class="copyright">
-        &copy; {{ year }}, made with <i class="tim-icons icon-heart-2"></i> by
+        &copy; {{ year+1 }}, made w <i class="tim-icons icon-heart-2"></i> by
         
         <a
           href="https://www.creative-tim.com/?ref=pdf-vuejs"
           target="_blank"
           rel="noopener"
-        >Creative Tim</a
+        >Creative </a
         >
-        for a better web.
+        for a web.
       </div>
     </div>
   </footer>

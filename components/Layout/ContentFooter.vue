@@ -4,17 +4,17 @@
       <ul class="nav">
         <li class="nav-item">
           <a
-            href="http://creative-tim.com"
+            href="http://tecnocasa.ga"
             target="_blank"
             rel="noopener"
             class="nav-link"
           >
-            Creative Tim
+            Tecnocasa
           </a>
         </li>
         <li class="nav-item">
           <a
-            href="https://www.creative-tim.com/presentation"
+            href="http://tecnocasa.ga/about"
             target="_blank"
             rel="noopener"
             class="nav-link"
@@ -24,7 +24,7 @@
         </li>
         <li class="nav-item">
           <a
-            href="http://blog.creative-tim.com"
+            href="http://blog.tecnocasa.ga"
             target="_blank"
             rel="noopener"
             class="nav-link"
@@ -41,8 +41,7 @@
           target="_blank"
           rel="noopener"
           >Creative Tim</a
-        >
-        for a better web.
+        >        
       </div>
     </div>
   </footer>

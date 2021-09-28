@@ -1,51 +1,92 @@
 <template>
+<!-- TODA LA WEB -->
   <div class="wrapper" :class="{ 'nav-open': $sidebar.showSidebar }">
+
+
+    <!-- Notificacoiones DERECHA SUPERIOR -->
     <notifications></notifications>
 
+
+    <!-- SIDEBAR -->
     <side-bar
       :background-color="sidebarBackground"
-      short-title="GL"
-      title="IoTicos GL"
+      short-title="TC"
+      title="Tecnocasa"
     >
-      <template slot-scope="props" slot="links">
+      <!-- Saque del template esto porque daba error -> slot-scope="props"
+      ...en teoria deberia reemplazarse por v-scope="" -->
+      <template slot="links">
 
         <sidebar-item
           :link="{
             name: 'Dashboard',
             icon: 'tim-icons icon-chart-pie-36',
-            path: '/'
+            path: '/dashboard'
+          }"
+        >        
+        </sidebar-item>
+
+           <sidebar-item
+          :link="{
+            name: 'Dispositivos',
+            icon: 'tim-icons icon-chart-pie-36',
+            path: '/dispositivos'
+          }"
+        >        
+        </sidebar-item>
+
+        <sidebar-item
+          :link="{
+            name: 'Alarmas',
+            icon: 'tim-icons icon-chart-pie-36',
+            path: '/alarmas'
           }"
         >
         </sidebar-item>
+        
+         <sidebar-item
+          :link="{
+            name: 'Templates',
+            icon: 'tim-icons icon-chart-pie-36',
+            path: '/templates'
+          }"
+        > 
+        </sidebar-item>
 
 
-
-
-
-
+        <!-- SOCIAL MEDIA LINKS -->
         <li class="active-pro">
-          <a href="https://www.creative-tim.com/product/nuxt-black-dashboard-pro" target="_blank">
+          <a href="https://www.youtube.com/" target="_blank">
             <i class="tim-icons icon-spaceship"></i>
-            <p>Upgrade to PRO</p>
+            <p>Youtube</p>
           </a>
         </li>
       </template>
     </side-bar>
-    <!--Share plugin (for demo purposes). You can remove it if don't plan on using it-->
+
+
+    <!--ENGRANAJE PARA CAMBIAR TEMAS-->
     <sidebar-share :background-color.sync="sidebarBackground"> </sidebar-share>
     <div class="main-panel" :data="sidebarBackground">
+
+      
+      <!-- BARRA DE NAVEGACION SUPERIOR - TITULO y USER PROFILE -->
       <dashboard-navbar></dashboard-navbar>
       <router-view name="header"></router-view>
 
+
+      <!-- CONTENIDO PRINCIPAL -->
       <div
         :class="{ content: !isFullScreenRoute }"
         @click="toggleSidebar"
       >
-        <zoom-center-transition :duration="200" mode="out-in">
-          <!-- your content here -->
+        <zoom-center-transition :duration="200" mode="out-in">         
           <nuxt></nuxt>
         </zoom-center-transition>
       </div>
+
+
+      <!-- FOOTER LINKS DERECHA + LINKS copyright DERECHA -->
       <content-footer v-if="!isFullScreenRoute"></content-footer>
     </div>
   </div>

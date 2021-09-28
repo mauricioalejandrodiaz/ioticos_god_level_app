@@ -3,8 +3,8 @@
     <notifications></notifications>
     <side-bar
       :background-color="sidebarBackground"
-      short-title="CT"
-      title="Creative Tim"
+      short-title="TC"
+      title="Tecnocasa"
     >
       <template slot-scope="props" slot="links">
         <sidebar-item
