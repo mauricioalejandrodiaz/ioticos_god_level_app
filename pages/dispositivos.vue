@@ -54,11 +54,11 @@
           </div>
         </div>
 
-        <div class="row pull-right">
+
           <div class="col-12">
             <base-button type="button" class="mb-3" size="large">Aceptar</base-button>
           </div>
-        </div>
+
       </card>
     </div>
 
