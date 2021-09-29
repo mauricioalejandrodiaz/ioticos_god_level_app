@@ -46,22 +46,13 @@
         
          <sidebar-item
           :link="{
-            name: 'Templates 1',
+            name: 'Templates',
             icon: 'tim-icons icon-chart-pie-36',
             path: '/templates'
           }"
         > 
         </sidebar-item>
-
-                 <sidebar-item
-          :link="{
-            name: 'Templates 2',
-            icon: 'tim-icons icon-chart-pie-36',
-            path: '/templates2'
-          }"
-        > 
-        </sidebar-item>
-
+        
 
         <!-- SOCIAL MEDIA LINKS -->
         <li class="active-pro">
