@@ -57,6 +57,7 @@
 
           <div class="col-12">
             <base-button type="button" class="mb-3" size="large">Aceptar</base-button>
+            
           </div>
 
       </card>

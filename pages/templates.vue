@@ -408,14 +408,14 @@
             <!-- FORM INDICATOR TYPE -->
             <div v-if="widgetType == 'indicator'">
               <base-input
-                v-model="iotIndicatorConfig.variableFullName"
+                v-model="configIndicator.variableFullName"
                 label="Var Name"
                 type="text"
               >
               </base-input>
 
               <base-input
-                v-model="iotIndicatorConfig.icon"
+                v-model="configIndicator.icon"
                 label="Icon"
                 type="text"
               ></base-input>
@@ -423,7 +423,7 @@
               <br />
 
               <el-select
-                v-model="iotIndicatorConfig.class"
+                v-model="configIndicator.class"
                 class="select-success"
                 placeholder="Select Class"
                 style="width: 100%;"
@@ -453,7 +453,7 @@
               <br /><br /><br />
 
               <el-select
-                v-model="iotIndicatorConfig.column"
+                v-model="configIndicator.column"
                 class="select-success"
                 placeholder="Select Column Width"
                 style="width: 100%;"
@@ -530,7 +530,7 @@
             ></Iotbutton>
             <Iotindicator
               v-if="widgetType == 'indicator'"
-              :config="iotIndicatorConfig"
+              :config="configIndicator"
             ></Iotindicator>
           </div>
         </div>
@@ -694,6 +694,7 @@
 </template>
 
 <script>
+
 import { Table, TableColumn } from "element-ui";
 import { Select, Option } from "element-ui";
 
@@ -711,6 +712,8 @@ export default {
       widgetType: "",
       templateName: "",
       templateDescription: "",
+
+
 
       ncConfig: {
         userId: "sampleuserid",
@@ -730,6 +733,8 @@ export default {
         demo: true
       },
 
+
+
       iotSwitchConfig: {
         userId: "userid",
         selectedDevice: {
@@ -744,34 +749,22 @@ export default {
         column: "col-6"
       },
 
-      configButton: {
-        userId: "userid",
-        selectedDevice: {
-          name: "Home",
-          dId: "8888"
-        },
-        variableFullName: "temperature",
-        text: "send",
-        message: "testing123",
-        variable: "varname",
-        widget: "button",
-        icon: "fa-bath",
-        column: "col-6"
-      },
 
-      iotIndicatorConfig: {
-        userId: "userid",
-        selectedDevice: {
-          name: "Home",
-          dId: "8888"
-        },
-        variableFullName: "temperature",
-        variable: "varname",
-        class: "success",
-        widget: "indicator",
-        icon: "fa-bath",
-        column: "col-6"
-      },
+
+      // configButton: {
+      //   userId: "userid",
+      //   selectedDevice: {
+      //     name: "Home",
+      //     dId: "8888"
+      //   },
+      //   variableFullName: "temperature",
+      //   text: "send",
+      //   message: "testing123",
+      //   variable: "varname",
+      //   widget: "button",
+      //   icon: "fa-bath",
+      //   column: "col-6"
+      // },
 
       configButton: {
         userId: "userid",
@@ -786,12 +779,28 @@ export default {
         variable: "var1",
         icon: "fa-sun",
         column: "col-4",
-        widget: "indicator",
+        widget: "button",
         class: "danger",
         message: "{'fanstatus': 'stop'}"
       },
 
+
+
       configIndicator: {
+        userId: "userid",
+        selectedDevice: {
+          name: "Home",
+          dId: "8888"
+        },
+        variableFullName: "temperature",
+        variable: "varname",
+        class: "success",
+        widget: "indicator",
+        icon: "fa-bath",
+        column: "col-6"
+      },
+
+/*       configIndicator: {
         userId: "userid",
         selectedDevice: {
           name: "Home",
@@ -803,10 +812,11 @@ export default {
         variableFullName: "Pump",
         variable: "var1",
         icon: "fa-sun",
-        column: "col-6",
+        column: "col-3",
         widget: "indicator",
         class: "success"
-      }
+      } */
+
     };
   },
 

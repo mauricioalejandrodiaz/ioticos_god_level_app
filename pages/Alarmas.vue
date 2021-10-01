@@ -1,7 +1,9 @@
 <template>
-    <div>
-        <h3>
-            Alarmas
-        </h3>
-    </div>
+  <div>
+    <h3>
+      Alarmas
+    </h3>
+  </div>
 </template>
+<script>
+</script>
