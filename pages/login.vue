@@ -32,7 +32,7 @@
             type="primary"
             class="mb-3"
             size="lg"
-            @click="login"
+            @click="login()"
             block
           >
             Login
@@ -57,6 +57,7 @@
 <script>
 const Cookie = process.client ? require("js-cookie") : undefined;
 export default {
+  middleware: 'notAuthenticated',
   name: "login-page",
   layout: "auth",
   data() {
@@ -66,6 +67,51 @@ export default {
         password: ""
       }
     };
+  },
+  methods: {
+    login() {
+      this.$axios
+        .post("/login", this.user)
+        .then(res => {
+          if (res.data.status == "success") {
+            this.$notify({
+              type: "success",
+              icon: "tim.icons icon-check-2",
+              message: "Success! Bienvenido " + res.data.userData.name
+            });            
+
+            const auth = {
+              token: res.data.token,
+              userData: res.data.userData
+            };
+            //token to store
+            this.$store.commit('setAuth', auth);
+
+            //set AUTH object in local storage
+            localStorage.setItem('auth', JSON.stringify(auth));
+            $nuxt.$router.push('/dashboard');
+
+            return;
+          }
+        })
+        .catch(err => {
+          if (err.response.data.error.errors.email.kind == "unique") {
+            this.$notify({
+              type: "danger",
+              icon: "tim.icons icon-alert-circle-exc",
+              message: "Warning! User already exist..."
+            });
+            return;
+          } else {
+            this.$notify({
+              type: "danger",
+              icon: "tim.icons icon-alert-circle-exc",
+              message: "Warning! Error creando usuario..."
+            });
+            return;
+          }
+        });
+    }
   }
 };
 </script>

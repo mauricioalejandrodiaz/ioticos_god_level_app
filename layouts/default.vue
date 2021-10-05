@@ -30,7 +30,7 @@
           :link="{
             name: 'Dispositivos',
             icon: 'tim-icons icon-chart-pie-36',
-            path: '/dispositivos'
+            path: '/devices'
           }"
         >        
         </sidebar-item>

@@ -43,10 +43,12 @@ router.post('/register', async (req, res) => {
 //LOGIN
 router.post('/login', async (req, res) => {
     try {
+        //enviamos request con email y password en el body por POST
         const email = req.body.email;
         const password = req.body.password;
-
+        //tratamos de buscar 1 email que coincida y se guarda la respuesta en USER
         const user = await User.findOne({ email: email });
+        //si no encuentra ninguno, devolvemos un error
         if (!user) {
             const toSend = {
                 status: "error",
@@ -54,14 +56,15 @@ router.post('/login', async (req, res) => {
             };
             return res.status(401).json(toSend);
         };
-
+        //si encontro uno, comparamos el pass del que viene el el req.body contra el pass encriptado en la DB
         if (bcrypt.compareSync(password, user.password)) {
             user.set('password', undefined, { strict: false });
-            const toker = jwt.sign({ userData: user }, 'securePasswordHere', { expiresIn: 60 * 60 * 24 * 30 });
+            const token = jwt.sign({ userData: user }, 'securePasswordHere', { expiresIn: 60 * 60 * 24 * 30 });
             const toSend = {
-                status: "Success",
-                toker: toker,
-                userData: user
+                status: "success",
+                token: token,
+                //devolvemos solo nombre y id
+                userData: {"name": user.name, "useId": user._id}
             };
             return res.status(200).json(toSend);
         } else {

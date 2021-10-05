@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { checkAuth } = require("../middlewares/authentication.js");
+
 import Device from "../models/device.js";
 
 // ******************************
@@ -16,9 +17,10 @@ import UserDevice from "../models/device.js";
 router.get('/device', checkAuth, async (req, res) => {
     try {
         const userId = req.userData._id;
+        console.log(req.userData._id);
         const devices = await Device.find({ userId: userId });
         const toSend = {
-            status: "Dispositivos recuperados correctamente",
+            status: "success",
             data: devices
         };
         return res.json(toSend);
