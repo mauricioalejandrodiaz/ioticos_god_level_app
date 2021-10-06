@@ -2,13 +2,11 @@ const express = require("express");
 const router = express.Router();
 const { checkAuth } = require("../middlewares/authentication.js");
 
-import Device from "../models/device.js";
-
 // ******************************
 // ******     MODELS    *********
 // ******************************
 
-import UserDevice from "../models/device.js";
+import Device from "../models/device.js";
 
 // ******************************
 // ******      API      *********
@@ -17,7 +15,6 @@ import UserDevice from "../models/device.js";
 router.get('/device', checkAuth, async (req, res) => {
     try {
         const userId = req.userData._id;
-        console.log(req.userData._id);
         const devices = await Device.find({ userId: userId });
         const toSend = {
             status: "success",
@@ -28,7 +25,7 @@ router.get('/device', checkAuth, async (req, res) => {
         console.log("Error, recuperando dispositivos");
         console.log(error);
         const toSend = {
-            status: "Error",
+            status: "error",
             error: error
         };
         return res.status(500).json(toSend);
@@ -45,9 +42,9 @@ router.post('/device', checkAuth, async (req, res) => {
         newDevice.userId = userId;
         newDevice.createdTime = Date.now();
         const device = await Device.create(newDevice);
-        selectDevide(userId, newDevice.dId);
+        selectDevice(userId, newDevice.dId);
         const toSend = {
-            status: "Dispositivo agregado correctamente"
+            status: "success"
         };
         return res.json(toSend);
 
@@ -55,7 +52,7 @@ router.post('/device', checkAuth, async (req, res) => {
         console.log("Error, no se puede crear el nuevo dispositivo");
         console.log(error);
         const toSend = {
-            status: "Error",
+            status: "error",
             error: error
         };
         return res.status(500).json(toSend);
@@ -126,7 +123,7 @@ router.delete('/device', checkAuth, async (req, res) => {
 router.put('/device', checkAuth, (req, res) => {
     const dId = req.body.dId;
     const userId = req.userData._id;
-    if (selectDevide(userId, dId)) {
+    if (selectDevice(userId, dId)) {
         const toSend = {
             status: "success"
         };
@@ -138,7 +135,6 @@ router.put('/device', checkAuth, (req, res) => {
         return res.json(toSend);
     }
 });
-
 // PRUEBAS
 router.get("/testing", (req, res) => {
     // GET viene por req.query
@@ -167,7 +163,7 @@ router.post("/testing", (req, res) => {
 // ******************************
 // *****    FUNCIONES   *********
 // ******************************
-async function selectDevide(userId, dId) {
+async function selectDevice(userId, dId) {
     try {
         const result = await Device.updateMany({ userId: userId }, { selected: false });
         const result2 = await Device.updateOne({ dId: dId, userId: userId },{selected: true});

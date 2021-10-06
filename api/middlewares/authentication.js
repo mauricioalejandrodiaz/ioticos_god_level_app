@@ -9,6 +9,7 @@ let checkAuth = (req, res, next) => {
             });
         }
         req.userData = decoded.userData;
+        console.log(decoded.userData);
         next();
     });
 }

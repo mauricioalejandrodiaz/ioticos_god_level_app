@@ -48,8 +48,9 @@ export const actions = {
             .catch(err => {
                 console.log(err);
             })
-    },
-    deleteDeviceRow(context, deviceId) {
+    }
+    
+/*     deleteDeviceRow(context, deviceId) {
         const axiosHeader = {
             headers: {
                 // "Content-Type": "application/json",
@@ -61,20 +62,21 @@ export const actions = {
             .delete('device?dId=' + deviceId, axiosHeader)
             .then(res => {   
                 if (res.data.status == 'success'){
-                    this.$notify({type: 'warning', message: 'Dispositio ID: '});
-                    console.log("PRUEBA");
+                    this.dispatch('getDevices');
+                    this.$notify({
+                        type: "danger",
+                        icon: "tim-icons icon-alert-circle-exc",
+                        message: "Dispositio ID: "+deviceId+" borrado"
+                      });
                 }})
                 //    this.$notify({type: 'warning', message: 'Dispositio ID: ' + deviceId + ' borrado!'});
                 // console.log("Se ha borrado " + JSON.stringify(res.data.data.deletedCount) + " dispositivo con el ID: " + deviceId); 
-                         
-                
-            
             .catch(function (error) {
                 console.log(error);
             });
             
-        this.dispatch('getDevices');
-    }
+        
+    } */
 
 }
         
