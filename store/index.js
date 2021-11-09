@@ -26,7 +26,7 @@ export const actions = {
         try {
             auth = JSON.parse(localStorage.getItem('auth'));
         } catch (error) {
-            console.log(error);
+            // console.log(error);
         }
         //recuperar auth de localStorage y lo grabamos en STATE
         this.commit('setAuth', auth);
@@ -39,44 +39,14 @@ export const actions = {
                 token: this.state.auth.token
             }
         };
-
         this.$axios
             .get('/device', axiosHeader)
             .then(res => {
                 this.commit('setDevices', res.data.data)
             })
-            .catch(err => {
-                console.log(err);
+            .catch(error => {
+                // console.log(error);
             })
-    }
-    
-/*     deleteDeviceRow(context, deviceId) {
-        const axiosHeader = {
-            headers: {
-                // "Content-Type": "application/json",
-                token: this.state.auth.token
-            }
-        };
-        // console.log(deviceId);
-        this.$axios
-            .delete('device?dId=' + deviceId, axiosHeader)
-            .then(res => {   
-                if (res.data.status == 'success'){
-                    this.dispatch('getDevices');
-                    this.$notify({
-                        type: "danger",
-                        icon: "tim-icons icon-alert-circle-exc",
-                        message: "Dispositio ID: "+deviceId+" borrado"
-                      });
-                }})
-                //    this.$notify({type: 'warning', message: 'Dispositio ID: ' + deviceId + ' borrado!'});
-                // console.log("Se ha borrado " + JSON.stringify(res.data.data.deletedCount) + " dispositivo con el ID: " + deviceId); 
-            .catch(function (error) {
-                console.log(error);
-            });
-            
-        
-    } */
-
+    } 
 }
         

@@ -19,7 +19,7 @@ app.use('/api', require('./routes/devices.js'));
 app.use('/api', require('./routes/users.js'));
 app.use('/api', require('./routes/templates.js'));
 app.use('/api', require('./routes/webhooks.js'));
-
+app.use('/api', require('./routes/emqxapi.js'));
 
 // EXPORTA CADA ENDPOINT POR SEPARADO
 module.exports = app;
@@ -58,12 +58,12 @@ try {
         console.log("*      Mongo conexion fallida      *".red);
         console.log("************************************".red);
         console.log("\n");
-        console.log(err);
+        // console.log(err);
     }
     );
 } catch (error) {
     console.log("Error conectando con mongo - /api/index.js");
-    console.log(error);
+    // console.log(error);
 }
 
 

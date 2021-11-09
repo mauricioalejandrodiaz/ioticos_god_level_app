@@ -228,7 +228,7 @@ export default {
               icon: "tim-icons icon-alert-circle-exc",
               message: "Un error grave ha ocurrido!"
             });
-            console.log(error);
+            // console.log(error);
             return;
           }
         });
@@ -256,7 +256,7 @@ export default {
           }
         })
         .catch(error => {
-          console.log(error);
+          // console.log(error);
         });
     },
 
@@ -279,7 +279,7 @@ export default {
           icon: "tim-icons icon-alert-circle-exc",
           message: "Error recuperando lista de templates"
         });
-        console.log(error);
+        // console.log(error);
         return;
       }
     }

@@ -18,7 +18,7 @@ router.get('/template', checkAuth, async (req, res) => {
         return res.json(response);
     } catch (error) {
         console.log("Error, recuperando dispositivos");
-        console.log(error);
+        // console.log(error);
         const response = {
             status: "Error",
             error: error
@@ -32,8 +32,8 @@ router.post('/template', checkAuth, async (req, res) => {
     try {
         const userId = req.userData._id;
         var newTemplate = req.body.template;
-        console.log("llego al router");
-        console.log(newTemplate);
+        // console.log("llego al router");
+        // console.log(newTemplate);
         newTemplate.userId = userId;
         newTemplate.createdTime = Date.now();
 
@@ -47,7 +47,7 @@ router.post('/template', checkAuth, async (req, res) => {
 
     } catch (error) {
         console.log("Error, no se puede crear el nuevo template");
-        console.log(error);
+        // console.log(error);
         const toSend = {
             status: "Error",
             error: error
@@ -70,7 +70,7 @@ router.delete('/template', checkAuth, async (req, res) => {
 
     } catch (error) {
         console.log("Error, no se puedo borrar el nuevo template");
-        console.log(error);
+        // console.log(error);
         const response = {
             status: "Error",
             error: error

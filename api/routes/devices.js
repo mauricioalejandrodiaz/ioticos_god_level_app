@@ -23,7 +23,7 @@ router.get('/device', checkAuth, async (req, res) => {
         return res.json(toSend);
     } catch (error) {
         console.log("Error, recuperando dispositivos");
-        console.log(error);
+        // console.log(error);
         const toSend = {
             status: "error",
             error: error
@@ -38,7 +38,7 @@ router.post('/device', checkAuth, async (req, res) => {
     try {
         const userId = req.userData._id;
         var newDevice = req.body.newDevice;
-        console.log(newDevice);
+        // console.log(newDevice);
         newDevice.userId = userId;
         newDevice.createdTime = Date.now();
         const device = await Device.create(newDevice);
@@ -108,7 +108,7 @@ router.delete('/device', checkAuth, async (req, res) => {
 
     } catch (error) {
         console.log("ERROR DELETING DEVICE");
-        console.log(error);
+        // console.log(error);
 
         const response = {
             status: "error",
@@ -144,7 +144,7 @@ router.get("/testing", (req, res) => {
         data: "Hola desde GET"
     }
     res.json(toReturn);
-    console.log("Se impacto API/testing");
+    // console.log("Se impacto API/testing");
     // res.send("Hello from API");
 });
 router.post("/testing", (req, res) => {
@@ -171,7 +171,7 @@ async function selectDevice(userId, dId) {
 
     } catch (error) {
         console.log("ERROR in SELECTDEVICES");
-        console.log(error);
+        // console.log(error);
         return false;
     }
 }

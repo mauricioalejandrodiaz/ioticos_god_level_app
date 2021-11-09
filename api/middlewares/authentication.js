@@ -8,8 +8,7 @@ let checkAuth = (req, res, next) => {
               error: err  
             });
         }
-        req.userData = decoded.userData;
-        console.log(decoded.userData);
+        req.userData = decoded.userData;        
         next();
     });
 }

@@ -832,7 +832,7 @@ export default {
           icon: "tim-icons icon-alert-circle-exc",
           message: "Error recuperando lista de templates"
         });
-        console.log(error);
+        // console.log(error);
         return;
       }
     },
@@ -858,7 +858,7 @@ export default {
           icon: "tim-icons icon-alert-circle-exc",
           message: "Error borrando template"
         });
-        console.log(error);
+        // console.log(error);
         return;
       }
     },

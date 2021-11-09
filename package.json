@@ -3,6 +3,12 @@
   "version": "1.0.0",
   "description": "Tecnocasa",
   "author": "Tecnocasa.ga",
+  "config": {
+    "nuxt": {
+      "host": "192.168.2.252",
+      "port": "3000"
+    }
+  },
   "scripts": {
     "dev": "nuxt",
     "devn": "nodemon api/index.js --exec babel-node",
