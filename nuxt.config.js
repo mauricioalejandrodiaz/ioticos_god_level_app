@@ -55,11 +55,27 @@ export default {
     'nuxt-highcharts',
   ],
 
-
-
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
+<<<<<<< HEAD
     baseURL: "http://192.168.2.252:3001/api"
+=======
+    baseURL: process.env.AXIOS_BASE_URL 
+  },
+  env:{
+   mqtt_prefix: process.env.MQTT_PREFIX,
+   mqtt_host: process.env.MQTT_HOST,
+   mqtt_port: process.env.MQTT_PORT
+  },
+
+  server: {
+    port: 3000, // default: 3000
+    host: '0.0.0.0', // default: localhost
+  },
+
+  serverMiddleware: {
+    '/api': '~/api'
+>>>>>>> 30a34ac528f454914434031526537c411f60b311
   },
 
   /*

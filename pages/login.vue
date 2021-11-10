@@ -4,7 +4,11 @@
       <card class="card-login card-white">
         <template slot="header">
           <img src="img//card-primary.png" alt="" />
+<<<<<<< HEAD
           <h1 class="card-title">Tecnocasa</h1>
+=======
+          <h1 class="card-title">IoT GL   </h1>
+>>>>>>> 30a34ac528f454914434031526537c411f60b311
         </template>
 
         <div>
@@ -68,32 +72,64 @@ export default {
       }
     };
   },
+<<<<<<< HEAD
+=======
+  mounted() {
+
+  },
+>>>>>>> 30a34ac528f454914434031526537c411f60b311
   methods: {
     login() {
       this.$axios
         .post("/login", this.user)
         .then(res => {
+<<<<<<< HEAD
           if (res.data.status == "success") {
             this.$notify({
               type: "success",
               icon: "tim.icons icon-check-2",
               message: "Success! Bienvenido " + res.data.userData.name
             });            
+=======
+
+          //success! - Usuario creado.
+          if (res.data.status == "success") {
+
+            this.$notify({
+              type: "success",
+              icon: "tim-icons icon-check-2",
+              message: "Success! Welcome " + res.data.userData.name
+            });
+
+            console.log(res.data)
+>>>>>>> 30a34ac528f454914434031526537c411f60b311
 
             const auth = {
               token: res.data.token,
               userData: res.data.userData
+<<<<<<< HEAD
             };
             //token to store
             this.$store.commit('setAuth', auth);
 
             //set AUTH object in local storage
             localStorage.setItem('auth', JSON.stringify(auth));
+=======
+            }
+
+            //token to de store - token a la tienda
+            this.$store.commit('setAuth', auth);
+
+            //set auth object in localStorage - Grabamos el token en localStorage
+            localStorage.setItem('auth', JSON.stringify(auth));
+
+>>>>>>> 30a34ac528f454914434031526537c411f60b311
             $nuxt.$router.push('/dashboard');
 
             return;
           }
         })
+<<<<<<< HEAD
         .catch(err => {
           if (err.response.data.error.errors.email.kind == "unique") {
             this.$notify({
@@ -101,13 +137,32 @@ export default {
               icon: "tim.icons icon-alert-circle-exc",
               message: "Warning! User already exist..."
             });
+=======
+        .catch(e => {
+          console.log(e.response.data);
+
+          if (e.response.data.error.errors.email.kind == "unique") {
+            this.$notify({
+              type: "danger",
+              icon: "tim-icons icon-alert-circle-exc",
+              message: "User already exists :("
+            });
+
+>>>>>>> 30a34ac528f454914434031526537c411f60b311
             return;
           } else {
             this.$notify({
               type: "danger",
+<<<<<<< HEAD
               icon: "tim.icons icon-alert-circle-exc",
               message: "Warning! Error creando usuario..."
             });
+=======
+              icon: "tim-icons icon-alert-circle-exc",
+              message: "Error creating user..."
+            });
+
+>>>>>>> 30a34ac528f454914434031526537c411f60b311
             return;
           }
         });

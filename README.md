@@ -1,20 +1,22 @@
-# app
+# IOTICOS GL APP
 
-## Build Setup
+Este proyecto contiene tanto el repositorio creado en NUXT como la API desarrollada en NODE
 
-```bash
-# install dependencies
-$ npm install
+El mismo fue desarrollado en el curso IoT Bootcamp God Level.
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+[![IoTicos GL](https://yt-embed.herokuapp.com/embed?v=ZePfdyJPCvM)](https://www.youtube.com/watch?v=ZePfdyJPCvM "IoTicos GL")
 
-# build for production and launch server
-$ npm run build
-$ npm run start
 
-# generate static project
-$ npm run generate
-```
+### Puedes acceder a más información sobre la plataforma en la primer clase:
 
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+[](https://www.udemy.com/course/iot-god-level/learn/lecture/24850534)
+
+### Puedes acceder a la demo aquí:
+
+[](https://demo.ioticos.org)
+
+![IOTICOS%20GL%20APP%203aecd292ad5447b9aff5744b6608d234/Snip20210311_8.png](IOTICOS%20GL%20APP%203aecd292ad5447b9aff5744b6608d234/Snip20210311_8.png)
+
+Instalar la plataforma en Linux es muy simple. Ya que para tal fin desarrollamos un instalador que encontrarás aquí: https://github.com/ioticos/ioticos_god_level_services
+
+![IOTICOS%20GL%20APP%203aecd292ad5447b9aff5744b6608d234/ScreenFlow.gif](IOTICOS%20GL%20APP%203aecd292ad5447b9aff5744b6608d234/ScreenFlow.gif)

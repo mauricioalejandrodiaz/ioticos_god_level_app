@@ -4,17 +4,29 @@
       <ul class="nav">
         <li class="nav-item">
           <a
+<<<<<<< HEAD
             href="http://tecnocasa.ga"
+=======
+            href="https://ioticos.org"
+>>>>>>> 30a34ac528f454914434031526537c411f60b311
             target="_blank"
             rel="noopener"
             class="nav-link"
           >
+<<<<<<< HEAD
             Tecnocasa
+=======
+            IoTicos.org
+>>>>>>> 30a34ac528f454914434031526537c411f60b311
           </a>
         </li>
         <li class="nav-item">
           <a
+<<<<<<< HEAD
             href="http://tecnocasa.ga/about"
+=======
+            href="https://ioticos.org"
+>>>>>>> 30a34ac528f454914434031526537c411f60b311
             target="_blank"
             rel="noopener"
             class="nav-link"
@@ -24,7 +36,11 @@
         </li>
         <li class="nav-item">
           <a
+<<<<<<< HEAD
             href="http://blog.tecnocasa.ga"
+=======
+            href="hhttps://ioticos.org"
+>>>>>>> 30a34ac528f454914434031526537c411f60b311
             target="_blank"
             rel="noopener"
             class="nav-link"
@@ -37,11 +53,17 @@
         &copy; {{ year }}, made with <i class="tim-icons icon-heart-2"></i> by
         
         <a
-          href="https://www.creative-tim.com/?ref=pdf-vuejs"
+          href="https://ioticos.org"
           target="_blank"
           rel="noopener"
+<<<<<<< HEAD
           >Creative Tim</a
         >        
+=======
+          >IoTicos</a
+        >
+        for a better web.
+>>>>>>> 30a34ac528f454914434031526537c411f60b311
       </div>
     </div>
   </footer>
